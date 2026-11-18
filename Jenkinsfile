@@ -83,7 +83,7 @@ pipeline {
                 sh '''
                     docker ps
                     curl -f http://localhost:8081
-                    curl -f -X POST http://localhost:8080/api/calculate \
+                    curl -f -X POST http://localhost:8081/api/calculate \
                     -H 'Content-Type: application/json' \
                     -d '{"a":8,"b":2,"operation":"+"}'
                 '''
