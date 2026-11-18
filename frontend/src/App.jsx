@@ -7,7 +7,7 @@ function App() {
   const [result, setResult] = useState("");
 
   const calculate = async () => {
-    const response = await fetch("http://localhost:5000/calculate", {
+    const response = await fetch("/api/calculate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

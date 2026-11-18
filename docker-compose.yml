@@ -1,0 +1,17 @@
+services:
+
+  backend:
+    image: ${DOCKERHUB_USER}/mern-calculator-backend:latest
+    container_name: mern-calculator-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+
+  frontend:
+    image: ${DOCKERHUB_USER}/mern-calculator-frontend:latest
+    container_name: mern-calculator-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
